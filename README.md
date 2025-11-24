@@ -1,6 +1,9 @@
-# Multi-Agent Data Analyst
+# Multi-Agent AutoML Data Analyst (MCP + A2A + Gemini Powered)
 
 Automated Profiler → EDA → AutoML → Verifier → Notebook Synthesizer → Gemini Insights
+
+🚀 Live Demo (Render Deployment):
+https://multiagent-data-analyst.onrender.com/
 
 Track: Enterprise Agents
 
@@ -77,103 +80,159 @@ Instead of one giant notebook, the intelligence is distributed:
 <img width="2452" height="1286" alt="image" src="https://github.com/user-attachments/assets/92641b2f-fceb-493a-b481-345e5e341de4" />
 
 
-#  Components
+1️⃣ ProfilerAgent
 
-✔  A2A Bus: lightweight JSON-based messaging bus
+✔ Reads dataset
 
-✔  MCP Tools: FileTools, DatasetTools, MemoryTools
+✔ Detects column types
 
-✔  Streamlit UI: Multi-page dashboard
+✔ Finds missing values
 
-✔  Persistent storage: streamlit_app_storage/
+✔ Sends message → EDAAgent
 
-✔  Notebook generation: nbformat + Markdown blocks
+2️⃣ EDAAgent
 
-✔  Modeling: scikit-learn pipelines + RandomizedSearchCV
+✔ Creates correlations, histograms, outlier analysis
 
-✔  LLM: Gemini 1.5 Flash / Pro for explanations
+✔ Saves all plots via MCP FileTools
 
-# Features
+✔ Sends message → ModelAgent
 
-✔ Data Upload & Storage
+3️⃣ ModelAgent
 
-✔ CSV upload
+✔ Auto-detects task type (classification/regression)
 
-✔ Saved using FileTools + MemoryTools
+✔ Builds full ML pipeline (imputation + scaling + encoding)
 
-✔ Profiler Agent
+✔ Tunes models
 
-✔ Dataset size
+✔ Saves best model
 
-✔ Missing values
+✔ Sends message → VerifierAgent
 
-✔ Memory footprint
+4️⃣ VerifierAgent
 
-✔ Column types
+✔ Validates model quality
 
-✔ EDA Agent
+✔ Computes quality tag (“Good”, “Acceptable”, “Weak”)
 
-✔ Distribution plots
+✔ Sends message → NotebookAgent
 
-✔ Correlation heatmaps
+5️⃣ NotebookSynthesizerAgent
 
-✔ Outlier detection
+✔ Builds a full auto-generated Jupyter Notebook
 
-✔ Saves charts to storage
+✔ Embeds all results and images
 
-✔ AutoML Model Agent
+✔ Saves notebook through FileTools
 
-✔ Task detection (classification vs regression)
+6️⃣ Gemini Integration
 
-✔ Train/test split
+✔ Gemini generates:
 
-✔ Numeric + categorical pipelines
+✔ Model explanations
 
-✔ Hyperparameter search
+✔ Recommendations
 
-✔ Saves model + metrics
+✔ Summaries
 
-✔ Verifier Agent
+Plain-English explanations for beginners
 
-✔ Sanity checks
+7️⃣ Streamlit UI
 
-✔ Missing column checks
+✔ Beautiful dashboard with:
 
-✔ Confidence output
+✔ Dataset Explorer
 
-✔ Notebook Synthesizer Agent
+✔ EDA Dashboard
 
--> Generates a full .ipynb notebook
+✔ AutoML Dashboard
 
--> Includes profiler, EDA, model, and verifier outputs
+✔ Verifier & Notebook Builder
 
--> Clean formatting
+✔ A2A Communications Console
 
-✔ Gemini Insights
+# Setup Instructions
 
--> Explains ML results in simple language
+Clone Repo
 
--> Suggests improvements
+ 1. git clone https://github.com/yourusername/multiagent-data-analyst
+ 
+ 2. cd multiagent-data-analyst
 
--> Highlights model strengths/weaknesses
+ 3. pip install -r requirements.txt
 
-# Tech Stack
-🚀 Component	Technology
-🚀 UI	Streamlit Multi-Page App
-🚀 Agents	Python-based custom agents
-🚀 A2A	JSON-based message bus
-🚀 Tools	MCP Tools (FileTools, DatasetTools, MemoryTools)
-🚀 Modeling	scikit-learn, pandas, numpy
-🚀 Visualization	matplotlib, seaborn
-🚀 Notebook	nbformat
+ 4. Add Gemini API Key
+
+ 5. Create .env:
+
+ 6. Run Streamlit -> streamlit run streamlit_app/app.py
+
+# Demo (Screenshots)
+
+# Dataset Upload
+
+<img width="2928" height="1746" alt="image" src="https://github.com/user-attachments/assets/6e6dddb5-a33b-47be-a2f0-44a6f26a06ec" />
+
+# EDA Dashboard
+
+<img width="2938" height="1760" alt="image" src="https://github.com/user-attachments/assets/ffc64ed4-f32c-49af-ae7d-b5b1de07770c" />
+
+<img width="2284" height="1518" alt="image" src="https://github.com/user-attachments/assets/ecaa796b-8470-4cdc-89f1-a9ee5437e221" />
+
+<img width="2260" height="936" alt="image" src="https://github.com/user-attachments/assets/68182f66-62b3-4dbd-b6aa-e57ba8bb532c" />
+
+# AutoML Results
+
+<img width="2894" height="1566" alt="image" src="https://github.com/user-attachments/assets/214fd60b-055d-4143-bee5-7283aca09528" />
+
+<img width="2940" height="1584" alt="image" src="https://github.com/user-attachments/assets/a27fe305-5c8c-4799-b049-fce96a0a1326" />
+
+# Gemini Explanation
+
+<img width="2326" height="1528" alt="image" src="https://github.com/user-attachments/assets/2f79d85b-d176-4b21-8a45-0c70d5e0e845" />
+
+# A2A Console
+
+<img width="2940" height="1774" alt="image" src="https://github.com/user-attachments/assets/9a0250a0-2415-432f-a3a0-b2c05aea8a7e" />
+
+# Notebook generated
+
+<img width="2354" height="1500" alt="image" src="https://github.com/user-attachments/assets/7d5ab7c6-97e1-436e-885d-798fb015f72f" />
+
+# Profiler Agent Output - 
+
+<img width="2940" height="1528" alt="image" src="https://github.com/user-attachments/assets/228e3f40-883a-41a4-abb9-58597050d94d" />
+
+<img width="2898" height="1560" alt="image" src="https://github.com/user-attachments/assets/3dc7df6d-6486-4019-87c3-c837a85398db" />
+
+# Verifier Agent - 
+
+<img width="2310" height="1342" alt="image" src="https://github.com/user-attachments/assets/21e769b2-bd25-45ef-a54c-c274eaa28262" />
+
+
+# Tools & Technologies Used
+
+🚀Category	Tools
+
+🚀Multi-Agent	Custom Agents, A2A Bus
+
+🚀LLM	Gemini 1.5 Flash
+
+🚀UI	Streamlit
+
+🚀ML	Scikit-Learn
+
+🚀Storage	Custom MemoryTools
+
+🚀Notebook	nbformat
+
+🚀Deployment	Render
+
+🚀Visualization	Plotly, Matplotlib, Seaborn
+
 🚀 LLM	Gemini 1.5 Flash
 
- # Deployment
-✔ Hugging
-
-
-# Environment Variables
-GEMINI_API_KEY = "your-key"
 
 # 🗂 Project Structure
 
