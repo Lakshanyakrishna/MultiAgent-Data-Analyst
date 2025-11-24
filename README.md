@@ -158,74 +158,96 @@ Instead of one giant notebook, the intelligence is distributed:
 -> Highlights model strengths/weaknesses
 
 # Tech Stack
-Component	Technology
-UI	Streamlit Multi-Page App
-Agents	Python-based custom agents
-A2A	JSON-based message bus
-Tools	MCP Tools (FileTools, DatasetTools, MemoryTools)
-Modeling	scikit-learn, pandas, numpy
-Visualization	matplotlib, seaborn
-Notebook	nbformat
-LLM	Gemini 1.5 Flash
-🚀 Deployment
-✔ Streamlit Cloud (Recommended)
+🚀 Component	Technology
+🚀 UI	Streamlit Multi-Page App
+🚀 Agents	Python-based custom agents
+🚀 A2A	JSON-based message bus
+🚀 Tools	MCP Tools (FileTools, DatasetTools, MemoryTools)
+🚀 Modeling	scikit-learn, pandas, numpy
+🚀 Visualization	matplotlib, seaborn
+🚀 Notebook	nbformat
+🚀 LLM	Gemini 1.5 Flash
 
-Push this repo to GitHub
+ # Deployment
+✔ Hugging
 
-Add GEMINI_API_KEY in Streamlit → Settings → Secrets
 
-Select streamlit_app/app.py as entry point
-
-Deploy 🎉
-
-Environment Variables
+# Environment Variables
 GEMINI_API_KEY = "your-key"
 
-🗂 Project Structure
-multiagent-data-analyst/
+# 🗂 Project Structure
+
+# multiagent-data-analyst/
+
 │
+
 ├── src/
+
 │   ├── agents/
+
 │   ├── core/
+
 │   ├── tools/
+
 │   │   ├── file_tools.py
+
 │   │   ├── dataset_tools.py
+
 │   │   ├── memory_tools.py
+
 │   │   ├── model_tools.py
+
 │   │   └── notebook_tools.py
+
 │
+
 ├── streamlit_app/
+
 │   ├── app.py
+
 │   └── pages/
+
 │       ├── AutoML.py
+
 │       ├── Profiler.py
+
 │       ├── EDA_Dashboard.py
+
 │       ├── Notebook_Report.py
+
 │       ├── Verifier.py
+
 │       └── A2A_Dashboard.py
+
 │
+
 ├── streamlit_app_storage/
+
 │   ├── memory/
+
 │   ├── uploads/
+
 │   └── reports/
+
 │
+
 └── README.md
 
-💡 Future Improvements
+ # Future Improvements
 
-Add RAG-based “Data Question Answering Agent”
+1. Add RAG-based “Data Question Answering Agent”
 
-Add deployment on Google Cloud Run using Docker
+2. Add deployment on Google Cloud Run using Docker
 
-Add Evaluation Agent for model fairness
+3. Add Evaluation Agent for model fairness
 
-Provide more AutoML models (XGBoost, LightGBM)
+4. Provide more AutoML models (XGBoost, LightGBM)
 
-Add voice-based interaction mode
+5. Add voice-based interaction mode
 
-🏅 Credits
+# Credits
 
 Built by Vaishnavi Sharma as part of
-Google x Kaggle – Agents Intensive (Nov 2025)
+Google x Kaggle – Agents Intensive 
 
-If you find this useful, ⭐ star the repo!
+# If you find this useful, ⭐ star the repo!
