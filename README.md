@@ -306,7 +306,6 @@ Clone Repo
 
 # Credits
 
-Built by Vaishnavi Sharma as part of
-Google x Kaggle – Agents Intensive 
+Built by Lakshanya Krishna 
 
 # If you find this useful, ⭐ star the repo! 🚀
